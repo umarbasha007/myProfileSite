@@ -28,6 +28,8 @@
   {
       /* margin: 2px; */
   }
+
+
   canvas {
     display: block;
   }
@@ -125,3 +127,38 @@
   .hud__score {
     margin: 0;
   }
+
+/* Added */
+
+.controls
+{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 50vh;
+    display: none;
+    margin: auto;
+}
+
+#move-left {
+   
+    height: 50vh;
+}
+
+#move-right {
+    
+    height: 50vh;
+}
+
+#fire {
+    position: absolute;
+    border-radius: 50% ;
+    width: 10vh;
+    height: 10vh;
+    font-size: x-small;
+    bottom: 30vh;
+    right: 0;
+    z-index: 100;
+    display: none;
+    margin: 5px;
+}
