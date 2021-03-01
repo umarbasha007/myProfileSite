@@ -4,7 +4,10 @@ const stage = document.createElement('canvas'),
 ctx = stage.getContext('2d'),
 dialogue = document.querySelector('.dialogue'),
 startBtn = dialogue.querySelector('button'),
+moveLeft = document.getElementById('move-left'),
+moveRight = document.getElementById('move-right'),
 hud = document.querySelector('.hud'),
+
 scoreNode = hud.querySelector('.hud__score span');
 
 let ship,lasers = [],enemies = [],
@@ -38,6 +41,22 @@ function Ship(options) {
 
   document.addEventListener('keydown', this.onKeyDown.bind(this));
   document.addEventListener('keyup', this.onKeyUp.bind(this));
+  moveLeft.addEventListener('click', this.moveShipLeft.bind(this));
+  // moveLeft.addEventListener('focusout', this.moveShipLeftStop.bind(this));
+  moveRight.addEventListener( 'click', this.moveShipRight.bind(this));
+  // moveRight.addEventListener( 'focusout', this.right = false );
+  
+}
+
+Ship.prototype.moveShipLeft = function(e)
+{
+  ship.x -= ship.speed
+}
+
+Ship.prototype.moveShipRight = function(e)
+{
+  ship.x += ship.speed
+
 }
 
 Ship.prototype.update = function (x) {
@@ -304,6 +323,8 @@ function startGame(e) {
   console.log('starting game');
   dialogue.classList.add('dialogue--hidden');
   hud.classList.remove('hud--hidden');
+  document.getElementById("control-ship").style.display = "flex";
+  document.getElementById("fire").style.display = "block";
   e.currentTarget.blur();
 
   // reset the demo/intro to the actual game settings:
