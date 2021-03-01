@@ -12,6 +12,22 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  #download-img
+  {
+    width: 20px;
+    margin: 4px;
+  }
+
+  #download-img:focus, #download-img:hover {
+    background-color: black;
+    color: #ff9d00;
+    transition-duration: 0.07s;
+  }
+  
+  .donwload-icon
+  {
+      /* margin: 2px; */
+  }
   canvas {
     display: block;
   }
