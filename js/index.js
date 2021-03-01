@@ -42,10 +42,10 @@ function Ship(options) {
 
   document.addEventListener('keydown', this.onKeyDown.bind(this));
   document.addEventListener('keyup', this.onKeyUp.bind(this));
-  moveLeft.addEventListener('click', this.moveShipLeft.bind(this));
-  // moveLeft.addEventListener('focusout', this.moveShipLeftStop.bind(this));
-  moveRight.addEventListener( 'click', this.moveShipRight.bind(this));
-  // moveRight.addEventListener( 'focusout', this.right = false );
+  moveLeft.addEventListener('touchstart', this.moveShipLeft.bind(this));
+  moveLeft.addEventListener('touchend', this.moveShipLeftStop.bind(this));
+  moveRight.addEventListener( 'touchstart', this.moveShipRight.bind(this));
+  moveRight.addEventListener( 'touchend', this.moveShipRightStop.bind(this) );
   fire.addEventListener('click', this.fireLaser.bind(this));
 
 }
@@ -54,19 +54,34 @@ Ship.prototype.fireLaser = function(e)
 { 
 
     this.shooting = !this.shooting;
-    
+
 
 } 
 
 
 Ship.prototype.moveShipLeft = function(e)
 {
-  ship.x -= ship.speed
+  // ship.x -= ship.speed
+  this.left = true;
+}
+
+Ship.prototype.moveShipLeftStop = function(e)
+{
+  // ship.x -= ship.speed
+  this.left = false;
 }
 
 Ship.prototype.moveShipRight = function(e)
 {
-  ship.x += ship.speed
+  // ship.x += ship.speed
+  this.right = true;
+
+}
+
+Ship.prototype.moveShipRightStop = function(e)
+{
+  // ship.x += ship.speed
+  this.right = false;
 
 }
 

@@ -155,10 +155,16 @@
     border-radius: 50% ;
     width: 10vh;
     height: 10vh;
+<<<<<<< HEAD
     font-size: 7px;
+=======
+    font-size: 6px;
+>>>>>>> 747ccfed830948c6528b328dfc27d2ff9e41e981
     bottom: 30vh;
     right: 0;
     z-index: 100;
     display: none;
     margin: 5px;
+    padding: 2px;
+
 }
