@@ -6,6 +6,7 @@ dialogue = document.querySelector('.dialogue'),
 startBtn = dialogue.querySelector('button'),
 moveLeft = document.getElementById('move-left'),
 moveRight = document.getElementById('move-right'),
+fire = document.getElementById('fire'),
 hud = document.querySelector('.hud'),
 
 scoreNode = hud.querySelector('.hud__score span');
@@ -45,8 +46,18 @@ function Ship(options) {
   // moveLeft.addEventListener('focusout', this.moveShipLeftStop.bind(this));
   moveRight.addEventListener( 'click', this.moveShipRight.bind(this));
   // moveRight.addEventListener( 'focusout', this.right = false );
-  
+  fire.addEventListener('click', this.fireLaser.bind(this));
+
 }
+
+Ship.prototype.fireLaser = function(e)
+{ 
+
+    this.shooting = !this.shooting;
+    
+
+} 
+
 
 Ship.prototype.moveShipLeft = function(e)
 {
